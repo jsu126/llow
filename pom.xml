@@ -37,17 +37,17 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
-			<version>2.5.10.1</version>
+			<version>2.5.17</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-json-plugin</artifactId>
-			<version>2.5.10.1</version>
+			<version>2.5.17</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-convention-plugin</artifactId>
-			<version>2.5.10.1</version>
+			<version>2.5.17</version>
 		</dependency>
 		<!-- hibernate配置 -->
 		<dependency>
