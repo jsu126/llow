@@ -35,9 +35,9 @@ public class FtpUtil {
     }
 
     public static boolean uploadFile(List<File> fileList) {
-        String ftpIp = "139.199.162.74";
-        String ftpUsername = "ftpuser";
-        String ftpPassword = "123456";
+        String ftpIp = "";
+        String ftpUsername = "";
+        String ftpPassword = "";
         int ftpPort = 21;
         FtpUtil ftpUtil = new FtpUtil(ftpIp, ftpUsername, ftpPassword, ftpPort);
         LOGGER.info("开始连接ftp服务器上传文件");
