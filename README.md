@@ -11,27 +11,27 @@ struts	hibernate	spring	ORC	Mail	Poi
 
 ## 页面展示
 
-![](E:\llow\image\register.png)
+![](image/register.png)
 
-![](E:\llow\image\login.png)
+![](image/login.png)
 
-![](E:\llow\image\main.png)
+![](image/main.png)
 
-![](E:\llow\image\search.png)
+![](image/search.png)
 
-![](E:\llow\image\information.png)
+![](image/information.png)
 
-![](E:\llow\image\idcard.png)
+![](image/idcard.png)
 
-![](E:\llow\image\address.png)
+![](image/address.png)
 
-![](E:\llow\image\admin_longin.png)
+![](image/admin_longin.png)
 
-![](E:\llow\image\user.png)
+![](image/user.png)
 
-![](E:\llow\image\product.png)
+![](image/product.png)
 
-![](E:\llow\image\order.png)
+![](image/order.png)
 
-![](E:\llow\image\user_data.png)
+![](image/user_data.png)
 
