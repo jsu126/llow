@@ -39,17 +39,6 @@ CREATE TABLE `tb_address`  (
 -- ----------------------------
 -- Records of tb_address
 -- ----------------------------
-INSERT INTO `tb_address` VALUES (48, 'llowid_a3a42d08', '15274439866', '李维', '四川省', '德阳市', '绵竹市', '  搭嘎的德国法国', 1);
-INSERT INTO `tb_address` VALUES (50, 'llowid_a3a42d08', '15274439867', '李仟仟', '天津市', '天津市辖区', '南开区', ' 搭嘎十多个', 0);
-INSERT INTO `tb_address` VALUES (56, 'llowid_dac0048f', '15627561712', '两', '北京市', '北京市辖区', '西城区', ' 东城区的大门。', 1);
-INSERT INTO `tb_address` VALUES (62, 'llowid_9828d300', '15236987453', '亮亮', '山西省', '太原市', '小店区', ' 兴业路22号', 1);
-INSERT INTO `tb_address` VALUES (63, 'llowid_f2e4e788', '17374383221', 'ss', '北京市', '北京市辖区', '东城区', '撒旦撒旦撒旦撒', 1);
-INSERT INTO `tb_address` VALUES (64, 'llowid_84690af2', '15627561712', '梁', '北京市', '北京市辖区', '东城区', '北京市区三环。', 1);
-INSERT INTO `tb_address` VALUES (65, 'llowid_b2a54d16', '17655335511', '丽丽', '山西省', '长治市', '城区', '  对方水电费', 1);
-INSERT INTO `tb_address` VALUES (68, 'llowid_f84541ae', '15274439866', '李薇', '河北省', '邯郸市', '肥乡区', ' 打广告撒大', 1);
-INSERT INTO `tb_address` VALUES (69, 'llowid_c2aded43', '15236987963', '杜威', '山西省', '朔州市', '右玉县', ' 国庆路3号', 1);
-INSERT INTO `tb_address` VALUES (70, 'llowid_e1d98847', '15236987452', '浏览', '山西省', '阳泉市', '郊区', ' 国庆路20号', 1);
-INSERT INTO `tb_address` VALUES (71, 'llowid_7927fd89', '15274412345', '袁某', '湖南省', '郴州市', '北湖区', ' 万花冲壹号', 1);
 
 -- ----------------------------
 -- Table structure for tb_attributes
