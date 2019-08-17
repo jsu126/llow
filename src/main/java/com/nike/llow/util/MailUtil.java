@@ -33,7 +33,7 @@ public class MailUtil {
 			@Override
 			public PasswordAuthentication getPasswordAuthentication() {
 				// 设置 账号和SMTP授权码
-				return new PasswordAuthentication("1014165248", "qmoaeocfmzkgbfee");
+				return new PasswordAuthentication("", "");
 			}
 		};
 
@@ -42,7 +42,7 @@ public class MailUtil {
 		// 2.创建一个Message，它相当于是邮件内容
 		Message message = new MimeMessage(session);
 		// 设置发送者
-		message.setFrom(new InternetAddress("1014165248@qq.com"));
+		message.setFrom(new InternetAddress(""));
 
 		// 设置发送方式与接收者
 		message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(email));
