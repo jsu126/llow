@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.nike.llow.domain">
+
+    <class name="Certification" table="tb_certification" schema="db_llow">
+        <id name="certificationId" column="certification_id">
+        	<generator class="native"></generator>
+        </id>
+        <property name="userId" column="user_id"/>
+        <property name="realName" column="real_name"/>
+        <property name="idCard" column="id_card"/>
+        <property name="nationality" column="nationality"/>
+        <property name="brithTime" column="brith_time"/>
+        <property name="address" column="address"/>
+        <property name="positive" column="positive"/>
+        <property name="negative" column="negative"/>
+        <property name="status" column="status"/>
+    </class>
+</hibernate-mapping>

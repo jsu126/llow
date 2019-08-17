@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+  <package name="manageCategory" namespace="/manage/category" extends="json-default">
+
+
+
+	<action name="categoryList" class="categoryManageAction"
+		method="categoryList">
+		<result name="success">
+			/admin/category.jsp
+		</result>
+	</action>
+
+
+	<action name="saveCategory" class="categoryManageAction"
+		method="saveCategory">
+		<result name="success" type="json">
+			<param name="root">outcome</param>
+		</result>
+		<result name="error" type="json">
+			<param name="root">outcome</param>
+		</result>
+	</action>
+		
+	<action name="categoryModify" class="categoryManageAction"
+		method="categoryModify">
+		<result name="success">
+			/admin/category-modify.jsp
+		</result>
+	</action>
+	
+	
+	<action name="updateCategory" class="categoryManageAction"
+		method="updateCategory">
+		<result name="success" type="json">
+			<param name="root">outcome</param>
+		</result>
+	</action>
+	
+	
+	<action name="deleteCategory" class="categoryManageAction"
+		method="deleteCategory">
+		<result name="success" type="json">
+		<param name="root">outcome</param> 
+		</result>
+	</action>
+	
+	
+
+  
+  
+  </package>
+</struts>

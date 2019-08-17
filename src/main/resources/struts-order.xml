@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="order" namespace="/order" extends="json-default">
+
+		<action name="myOrder" class="orderAction" method="myOrder">
+
+			<result name="success">
+				/order.jsp
+			</result>
+		</action>
+
+
+    
+    <action name="orderConfirm" class="orderAction" method="orderConfirm">
+     <result name="success" type="redirectAction">
+    		/order/pay
+    	</result> 
+    </action>
+    <action name="paySuccess" class="orderAction" method="paySuccess">
+    	<result name="success">
+    		/success.jsp
+    	</result>
+    </action>
+		<action name="commentList" class="orderAction"
+			method="commentList">
+			<result name="success">
+				/commentlist.jsp
+			</result>
+		</action>
+		<action name="commentCommit" class="orderAction"
+			method="commentCommit">
+			<result name="success" type="redirectAction">
+				myOrder
+			</result>
+		</action>
+		<action name="remind" class="orderAction" method="remind">
+			<result name="success" type="redirectAction">
+				myOrder
+			</result>
+		</action>
+		<action name="receipt" class="orderAction" method="receipt">
+			<result name="success" type="redirectAction">
+				myOrder
+			</result>
+		</action>
+		<action name="orderConfirm" class="orderAction" method="orderConfirm">
+		</action>
+		<action name="paySuccess" class="orderAction" method="paySuccess">
+			<result name="success">
+				/success.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

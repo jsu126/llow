@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+  <package name="manageorder" namespace="/manage/order" extends="json-default">
+	<action name="orderList" class="orderManageAction" method="orderList">
+		<result name="list">
+			/admin/order-list.jsp
+		</result>
+	</action>
+	<action name="orderInfo" class="orderManageAction" method="orderInfo">
+		<result name="orderDetail">
+			/admin/order-show.jsp
+		</result>
+	</action>
+	<action name="orderSend" class="orderManageAction" method="orderSend">
+		<result name="orderSend" type="json">
+			<param name="root">result</param>
+		</result>
+	</action>
+	<action name="orderCount" class="orderManageAction" method="orderCount">
+		<result name="success" type="json">
+			<param name="root">count</param>
+		</result>
+	</action>
+	
+	<action name="orderSearch" class="orderManageAction" method="orderSearch">
+  	<result name="success">
+  			/admin/order-list.jsp
+  	</result>
+  </action>
+  
+  </package>
+</struts>

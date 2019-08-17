@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.nike.llow.domain">
+
+    <class name="Address" table="tb_address" schema="db_llow">
+        <id name="addressId" column="address_id">
+        	<generator class="native"></generator>
+        </id>
+        <property name="userId" column="user_id"/>
+        <property name="phone" column="phone"/>
+        <property name="consingee" column="consingee"/>
+        <property name="provide" column="provide"/>
+        <property name="city" column="city"/>
+        <property name="region" column="region"/>
+        <property name="detailAddress" column="detailAddress"/>
+        <property name="status" column="status"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,380 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+
+		<title>个人账单</title>
+
+		<link href="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+
+		<link href="${pageContext.request.contextPath}/css/personal.css" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/css/blstyle.css" rel="stylesheet" type="text/css">
+		<script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/shopCatr.js"></script>
+		<script type="text/javascript">
+        $(function(){
+	           shopCart("${pageContext.request.contextPath}/product/shopCartCount?time=" + new Date().getTime());
+         })
+         </script>
+	</head>
+
+	<body>
+		<!--头 -->
+		<header>
+			<article>
+				<div class="mt-logo">
+					<!--顶部导航条 -->
+					<div class="am-container header">
+						<ul class="message-l">
+							<div class="topMessage">
+								<div class="menu-hd">
+							<c:if test="${user==null}">
+								<a href="${pageContext.request.contextPath}/login.jsp" target="_top" class="h">亲，请登录</a>
+								<a href="${pageContext.request.contextPath}/register.jsp" target="_top">免费注册</a>
+							</c:if>
+							<c:if test="${user!=null}">
+								<a href="${pageContext.request.contextPath}/information.jsp" target="_top" class="h">${user.username}</a>
+								<a href="${pageContext.request.contextPath}/user/exit" target="_top">退出</a>
+							</c:if>
+							
+						</div>
+							</div>
+						</ul>
+						<ul class="message-r">
+					<div class="topMessage home">
+						<div class="menu-hd"><a href="${pageContext.request.contextPath}" target="_top" class="h">商城首页</a></div>
+					</div>
+					<div class="topMessage my-shangcheng">
+						<div class="menu-hd MyShangcheng"><a href="${pageContext.request.contextPath}/information.jsp" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+					</div>
+					<div class="topMessage mini-cart">
+						<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+					</div>
+					<div class="topMessage favorite">
+						<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
+				</ul>
+						</div>
+
+						<!--悬浮搜索框-->
+
+						<div class="nav white">
+							<div class="logoBig">
+								<li><img src="${pageContext.request.contextPath}/images/logobig.png" /></li>
+							</div>
+
+							<div class="search-bar pr">
+								<a name="index_none_header_sysc" href="#"></a>
+								<form action="${pageContext.request.contextPath}/product/productSearch?pageNum=1" method="post">
+							<input id="searchInput" name="productSearchName" type="text" placeholder="搜索" autocomplete="off">
+							<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
+						</form>
+							</div>
+						</div>
+
+						<div class="clear"></div>
+					</div>
+				</div>
+			</article>
+		</header>
+
+            <div class="nav-table">
+					   <div class="long-title"><span class="all-goods">全部分类</span></div>
+					   <div class="nav-cont">
+							<ul>
+								<li class="index"><a href="${pageContext.request.contextPath}" target="_top" class="h">首页</a></li>
+                                <li class="qc"><a href="${pageContext.request.contextPath}/product/productGenre?pageNum=1&genre=loverStatus">恋人</a></li>
+                                <li class="qc"><a href="${pageContext.request.contextPath}/product/productGenre?pageNum=1&genre=friendStatus">朋友</a></li>
+                                <li class="qc"><a href="${pageContext.request.contextPath}/product/productGenre?pageNum=1&genre=kinsfolkStatus">亲人</a></li>
+                                <li class="qc last"><a href="${pageContext.request.contextPath}/product/productGenre?pageNum=1&genre=holidayStatus">节日</a></li>
+							</ul>
+						    
+						</div>
+			</div>
+			<b class="line"></b>
+
+		<div class="center">
+			<div class="col-main">
+				<div class="main-wrap">
+
+					<div class="user-bill">
+						<!--标题 -->
+						<div class="am-cf am-padding">
+							<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">账单</strong> / <small>Electronic&nbsp;bill</small></div>
+						</div>
+						<hr/>
+
+						<div class="ebill-section">
+							<div class="ebill-title-section">
+								<h2 class="trade-title section-title">
+                                                                                                                                     交易
+                            <span class="desc">（金额单位：元）</span>
+                        </h2>
+
+								<div class=" ng-scope">
+									<div class="trade-circle-select  slidedown-">
+										<a href="javascript:void(0);" class="current-circle ng-binding">2015/11/01 - 2015/11/30</a>
+
+									</div>
+									<span class="title-tag"><i class="num ng-binding">12</i>月</span>
+								</div>
+							</div>
+
+							<div class="module-income ng-scope">
+								<div class="income-slider ">
+									<div class="block-income block  fn-left">
+										<h3 class="income-title block-title">
+                                                                                                          支出
+                                      <span class="num ng-binding">
+                                              119.80
+                                       </span>
+                                    <span class="desc ng-binding">
+                                           <a href="billlist.html">查看支出明细</a>
+                                         </span>
+                                             </h3>
+
+										<div ng-class="shoppingChart" class="catatory-details  fn-hide shopping">
+											<div class="catatory-chart fn-left fn-hide">
+												<div class="title">类型</div>
+												<ul>
+
+
+												</ul>
+											</div>
+											<div class="catatory-detail fn-left">
+												<div class="title ng-binding">
+													购买商品
+												</div>
+												<ul>
+												
+													<li class="ng-scope  delete-false">
+
+														<div class="  ng-scope">
+															<a href="#" class="text fn-left " title="呢子大衣">
+																<span class="emoji-span ng-binding">呢子大衣</span>
+																<span class="amount fn-right ng-binding">349.00</span>
+															</a>
+														</div>
+													</li>
+
+													<li class="ng-scope  delete-false">
+
+														<div class="  ng-scope">
+															<a href="#" class="text fn-left " title="金士顿羊年限量版16gU盘">
+																<span class="emoji-span ng-binding">金士顿羊年限量版16gU盘</span>
+																<span class="amount fn-right ng-binding">39.00</span>
+															</a>
+														</div>
+													</li>
+
+													<li class="ng-scope  delete-false">
+
+														<div class="  ng-scope">
+															<a href="#" class="text fn-left " title="呢子大衣">
+																<span class="emoji-span ng-binding">呢子大衣</span>
+																<span class="amount fn-right ng-binding">349.00</span>
+															</a>
+														</div>
+													</li>
+
+													<li class="ng-scope  delete-false">
+
+														<div class="  ng-scope">
+															<a href="#" class="text fn-left " title="金士顿羊年限量版16gU盘">
+																<span class="emoji-span ng-binding">金士顿羊年限量版16gU盘</span>
+																<span class="amount fn-right ng-binding">39.00</span>
+															</a>
+														</div>
+													</li>
+
+													<li class="ng-scope  delete-false">
+
+														<div class="  ng-scope">
+															<a href="#" class="text fn-left " title="呢子大衣">
+																<span class="emoji-span ng-binding">呢子大衣</span>
+																<span class="amount fn-right ng-binding">349.00</span>
+															</a>
+														</div>
+													</li>
+
+													<li class="ng-scope  delete-false">
+
+														<div class="  ng-scope">
+															<a href="#" class="text fn-left " title="羊毛毡底鞋垫">
+																<span class="emoji-span ng-binding">羊毛毡底鞋垫</span>
+																<span class="amount fn-right ng-binding">9.90</span>
+															</a>
+														</div>
+													</li>
+
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="block-expense block  fn-left">
+										<div class="slide-button right"></div>
+									</div>
+									<div class="clear"></div>
+
+									<!--收入-->
+									<h3 class="expense income-title block-title">
+                                                                                                                       收入                                                              
+                                      <span class="num ng-binding">
+                                              0.00
+                                       </span>
+                                    <span class="desc ng-binding">
+                                           <a href="billlist.html">查看收入明细</a>
+                                    </span>
+                                </h3>
+								</div>
+
+								<!--消费走势-->
+								<div class="module-consumeTrend inner-module">
+									<h3 class="module-title">消费走势</h3>
+									<div id="consumeTrend-chart" class="consumeTrend-chart">
+
+									</div>
+								</div>
+
+								<!--银行卡使用情况-->
+
+								<div class="module-card inner-module">
+									<h3 class="module-title">银行卡使用情况</h3>
+									<div class="card-chart valid">
+										<div class="cards-carousel">
+											<div class="mask">
+
+												<div class="bac fn-left"></div>
+												<div class="bank ng-binding" style="background-image: url(images/combo.png);">中国农业银行</div>
+												<div class="details">
+													<a>查看详情</a>
+												</div>
+											</div>
+										</div>
+										<div class="cards-details">
+											<div class="bank-name">
+												<div class="name fn-left" style="background-image: url(images/combo.png);"></div>
+												<span class="close fn-right"><a>X</a></span>
+											</div>
+											<div class="bank-detail">
+												<div class="totalin fn-left">
+													<span class="fn-left">流入</span>
+													<span class="amount fn-right">0.00</span>
+												</div>
+												<div class="totalout fn-left">
+													<span class="fn-left">流出</span>
+													<span class="amount fn-right">0.00</span>
+												</div>
+												<div class="expand fn-left">
+													<span class="fn-left">支出</span>
+													<span class="amount fn-right">0.00</span>
+												</div>
+												<div class="withdraw fn-left">
+													<span class="fn-left">提现</span>
+													<span class="amount fn-right">
+							                                0.00
+                            						</span>
+												</div>
+												<div class="recharge fn-left">
+													<span class="fn-left">充值</span>
+													<span class="amount fn-right">
+                                                            0.00
+                            						</span>
+												</div>
+
+												<div class="refund fn-left">
+													<span class="fn-left">银行卡退款</span>
+													<span class="amount fn-right ">0.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<script>
+									$(document).ready(function (ev) {
+								
+									    $('.cards-carousel .details').on('click', function (ev) {
+								             $('.cards-details').css("display","block");
+								             $('.cards-carousel').css("display","none");								 
+									    });									   									    
+								
+									    $('.cards-details .close').on('click', function (ev) {
+								             $('.cards-details').css("display","none");
+								             $('.cards-carousel').css("display","block");								 
+									    });									    
+									    									   								    
+									});
+								</script>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<!--底部-->
+				<div class="footer">
+					<div class="footer-hd">
+						<p>
+							<a href="#">恒望科技</a>
+							<b>|</b>
+							<a href="#">商城首页</a>
+							<b>|</b>
+							<a href="#">支付宝</a>
+							<b>|</b>
+							<a href="#">物流</a>
+						</p>
+					</div>
+					<div class="footer-bd">
+						<p>
+							<a href="#">关于恒望</a>
+							<a href="#">合作伙伴</a>
+							<a href="#">联系我们</a>
+							<a href="#">网站地图</a>
+							<em>© 2015-2025 Hengwang.com 版权所有</em>
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+			<aside class="menu">
+		<ul>
+			<li class="person"><a
+				href="${pageContext.request.contextPath}/information.jsp">个人中心</a></li>
+			<li class="person"><a href="#">个人资料</a>
+				<ul>
+					<li class="active"><a
+						href="${pageContext.request.contextPath}/information.jsp">个人信息</a></li>
+					<li><a href="${pageContext.request.contextPath}/safety.jsp">安全设置</a></li>
+					<li><a href="${pageContext.request.contextPath}/user/address">收货地址</a></li>
+				</ul></li>
+			<li class="person"><a href="#">我的交易</a>
+				<ul>
+					<li><a href="${pageContext.request.contextPath}/order/myOrder">订单管理</a></li>
+					<li><a href="${pageContext.request.contextPath}/change.jsp">退款售后</a></li>
+				</ul></li>
+
+
+			<li class="person"><a href="#">我的小窝</a>
+				<ul>
+					<li><a
+						href="${pageContext.request.contextPath}/user/collection">收藏</a></li>
+					<li><a href="${pageContext.request.contextPath}/foot.jsp">足迹</a></li>
+					<li><a href="${pageContext.request.contextPath}/comment.jsp">评价</a></li>
+					<li><a href="${pageContext.request.contextPath}/news.jsp">消息</a></li>
+				</ul></li>
+
+		</ul>
+
+		</aside>
+		</div>
+
+	</body>
+
+</html>

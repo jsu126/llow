@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.nike.llow.domain">
+
+    <class name="ShopCart" table="tb_shop_cart" schema="db_llow">
+        <id name="shopCartId" column="shop_cart_id">
+        	<generator class="native"></generator>
+        </id>
+        <property name="userId" column="user_id"/>
+        <property name="productId" column="product_id"/>
+        <property name="productCount" column="product_count"/>
+        <property name="standardName" column="standard_name"/>
+    </class>
+</hibernate-mapping>

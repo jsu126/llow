@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.nike.llow.domain">
+
+    <class name="Order" table="tb_order" schema="db_llow">
+        <id name="orderId" column="order_id">
+        	<generator class="native"></generator>
+        </id>
+        <property name="userId" column="user_id"/>
+        <property name="addressId" column="address_id"/>
+        <property name="orderNumber" column="order_number"/>
+        <property name="totalPrice" column="total_price"/>
+        <property name="orderTime" column="order_time"/>
+        <property name="payTime" column="pay_time"/>
+        <property name="sendTime" column="send_time"/>
+        <property name="finishTime" column="finish_time"/>
+        <property name="status" column="status"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="user" namespace="/user" extends="json-default">
+		<action name="uploadPicture" class="userAction"
+			method="uploadPicture">
+			<result name="picture" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="updateInfo" class="userAction"
+			method="updateInfo">
+			<result name="success" type="redirect">
+				/information.jsp
+			</result>
+		</action>
+
+		<action name="bindPhone" class="userAction" method="bindPhone">
+			<result name="success">
+				/bindphone.jsp
+			</result>
+		</action>
+		<action name="safety" class="userAction" method="safety">
+			<result name="success">
+				/safety.jsp
+			</result>
+		</action>
+		<action name="phoneCode" class="userAction" method="phoneCode">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+		<action name="newPhoneCode" class="userAction"
+			method="newPhoneCode">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+		<action name="updateNewPhone" class="userAction"
+			method="updateNewPhone">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+		<action name="email" class="userAction" method="email">
+			<result name="success" type="redirect">
+				/email.jsp
+			</result>
+		</action>
+		<action name="emailCode" class="userAction" method="emailCode">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+		<action name="updateNewEmail" class="userAction"
+			method="updateNewEmail">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+
+		<action name="uploadIdCard" class="userAction"
+			method="uploadIdCard">
+			<result name="idCard" type="json">
+				<param name="root">certification</param>
+			</result>
+		</action>
+		<action name="updateIdCardInfo" class="userAction"
+			method="updateIdCardInfo">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="uploadPicture" class="userAction"
+			method="uploadPicture">
+			<result name="picture" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+
+		<action name="emailRegister" class="userAction"
+			method="emailRegister">
+			<result name="success" type="json">
+				<param name="root">outcome</param>
+			</result>
+		</action>
+
+		<action name="emailRegisterFont" class="userAction"
+			method="emailRegisterFont">
+			<result name="success" type="json">
+				<param name="root">outcome</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">outcome</param>
+			</result>
+		</action>
+
+		<action name="sendCode" class="userAction" method="sendCode">
+			<result name="success" type="json">
+				<param name="root">outcome</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">outcome</param>
+			</result>
+		</action>
+
+		<action name="phoneRegisterFont" class="userAction"
+			method="phoneRegisterFont">
+			<result name="success" type="json">
+				<param name="root">outcome</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">outcome</param>
+			</result>
+		</action>
+
+		<action name="phoneRegister" class="userAction"
+			method="phoneRegister">
+			<result name="success" type="json">
+				<param name="root">outcome</param>
+			</result>
+		</action>
+
+
+		<action name="getImage" class="userAction" method="getImage">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+
+		<action name="userLogin" class="userAction" method="userLogin">
+			<result name="success" type="json">
+				<param name="root">outcome</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">outcome</param>
+			</result>
+
+		</action>
+		<action name="updateInfo" class="userAction"
+			method="updateInfo">
+			<result name="success" type="redirect">
+				/information.jsp
+			</result>
+		</action>
+		<action name="address" class="addressAction" method="address">
+			<result name="success">
+				/address.jsp
+			</result>
+		</action>
+		<action name="mediumClear" class="addressAction"
+			method="mediumClear">
+			<result name="success" type="redirectAction">
+				address
+			</result>
+		</action>
+		<action name="saveAddress" class="addressAction"
+			method="saveAddress">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+		<action name="deleteAddress" class="addressAction"
+			method="deleteAddress">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+		<action name="updateAddressStatus" class="addressAction"
+			method="updateAddressStatus">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+		<action name="toEditAddress" class="addressAction"
+			method="toEditAddress">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+		<action name="editAddress" class="addressAction"
+			method="editAddress">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+			</result>
+		</action>
+		<action name="exit" class="userAction" method="exit">
+			<result name="success" type="redirect">
+				/index.jsp
+			</result>
+		</action>
+		<action name="collection" class="userAction"
+			method="collection">
+			<result name="success">
+				/collection.jsp
+			</result>
+		</action>
+
+		<action name="toMoveCProduct" class="userAction"
+			method="toMoveCProduct">
+			<result name="success" type="json">
+				<param name="root">responseResult</param>
+
+            </result>
+    	</action>
+    	
+    	<action name="toBindOnePhone" class="userAction" method="toBindOnePhone">
+    		<result name="success" type="json">
+				<param name="root">user1</param>
+            </result>
+    	</action>
+    	
+    	<action name="toBindOneEmail" class="userAction" method="toBindOneEmail">
+    		<result name="success" type="json">
+				<param name="root">user2</param>
+            </result>
+    	</action>
+   <action name="bindOnePhone" class="userAction" method="bindOnePhone">
+    		<result name="success" type="json">
+				<param name="root">responseResult</param>
+            </result>
+    	</action>
+		
+		<action name="checkCertification" class="userAction"
+			method="checkCertification">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+
+
+	<action name="updateModifyPassword" class="userAction" method="updateModifyPassword">
+		<result name="success" type="json">
+			<param name="root">outcome</param>
+		</result>
+	</action>
+	
+	<action name="saveBindPhone" class="userAction" method="saveBindPhone">
+		<result name="success" type="json">
+			<param name="root">outcome</param>
+		</result>
+	</action>
+	
+	</package>
+</struts>

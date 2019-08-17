@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+  <package name="manageProduct" namespace="/manage/product" extends="json-default">
+  	<action name="productList"  class="productManageAction" method="productList">
+  		<result name="success">
+  			/admin/product-list.jsp
+  		</result>
+  	</action>
+  	<action name="uploadProductImage" class="productManageAction" method="uploadProductImage">
+    		<result name="success" type="json">
+    			<param name="root">result</param>
+    		</result>
+    	</action>
+  	<action name="productInfo"  class="productManageAction" method="productInfo">
+  		<result name="success">
+  			/admin/product-show.jsp
+  		</result>
+  	</action>
+  	<action name="saveProduct"  class="productManageAction" method="saveProduct">
+  		<result name="addProduct" type="json">
+  			<param name="root">result</param>
+  		</result>
+  	</action>
+
+  	<action name="productList"  class="productManageAction" method="productList">
+  		<result name="success">
+  			/admin/product-list.jsp
+  		</result>
+  	</action>
+  	<action name="uploadProductImage" class="productManageAction" method="uploadProductImage">
+    		<result name="success" type="json">
+    			<param name="root">result</param>
+    		</result>
+    	</action>
+  	<action name="productInfo"  class="productManageAction" method="productInfo">
+  		<result name="success">
+  			/admin/product-show.jsp
+  		</result>
+  	</action>
+		<action name="productList" class="productManageAction" method="productList">
+			<result name="success">
+				/admin/product-list.jsp
+			</result>
+		</action>
+		<action name="uploadProductImage" class="productManageAction"
+			method="uploadProductImage">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="getProductInfo" class="productManageAction" method="getProductInfo">
+			<result name="get">
+				/admin/product-edit.jsp
+			</result>
+		</action>
+		
+		<action name="productInfo" class="productManageAction" method="productInfo">
+			<result name="success">
+				/admin/product-show.jsp
+			</result>
+		</action>
+
+		<action name="productStatus" class="productManageAction" method="productStatus">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="updateProduct" class="productManageAction" method="updateProduct">
+			<result name="update" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="productDel" class="productManageAction" method="productDel">
+			<result name="success" type="json">
+				<param name="root">resVo</param>
+			</result>
+		</action>
+		<action name="productCount" class="productManageAction" method="productCount">
+			<result name="success" type="json">
+				<param name="root">count</param>
+			</result>
+		</action>
+		<action name="commentCount" class="productManageAction" method="commentCount">
+			<result name="success" type="json">
+				<param name="root">commentCountList</param>
+			</result>
+		</action>
+		<action name="salesCount" class="productManageAction" method="salesCount">
+			<result name="success" type="json">
+				<param name="root">salesCountList</param>
+			</result>
+		</action>
+		<action name="salesYeas" class="productManageAction" method="salesYeas">
+			<result name="success" type="json">
+				<param name="root">salesYearList</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>

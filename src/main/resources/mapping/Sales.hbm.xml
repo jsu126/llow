@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.nike.llow.domain">
+
+    <class name="Sales" table="tb_sales" schema="db_llow">
+        <id name="salesId" column="sales_id">
+        	<generator class="native"></generator>
+        </id>
+        <property name="productId" column="product_id"/>
+        <property name="saleCount" column="sale_count"/>
+        <property name="year" column="year"/>
+        <property name="month" column="month"/>
+    </class>
+</hibernate-mapping>

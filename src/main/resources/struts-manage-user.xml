@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+  <package name="manageUser" namespace="/manage/user" extends="json-default">
+
+
+	
+  <action name="userList" class="userManageAction" method="userList">
+  	<result name="success">
+  		/admin/member-list.jsp
+  	</result>
+  </action>
+  
+   <action name="userInfo" class="userManageAction" method="userInfo">
+  	<result name="success">
+  		/admin/member-show.jsp
+  	</result>
+  </action>
+  
+  <action name="deleteUser" class="userManageAction" method="deleteUser">
+  	<result name="success" type="json">
+         <param name="root">resVo</param>
+  	</result>
+  </action>
+  
+  <action name="initialPassword" class="userManageAction" method="initialPassword">
+  	<result name="success" type="json">
+  		<param name="root">responseResult</param>
+  	</result>
+  </action>
+  
+   
+  <action name="exportData" class="userManageAction" method="exportData">
+  	<result name="exportExcel" type="stream">
+		<param name="contentType">application/vnd.ms-excel</param>  
+        <!-- excelStream fileName 与action中变量名必须相同 -->
+        <param name="inputName">excelStream</param>  
+        <param name="contentDisposition">attachment;filename="${fileName}"</param>  
+        <param name="bufferSize">1024</param>
+	</result>
+  </action>
+  
+  
+   <action name="charCheck" class="userManageAction" method="charCheck">
+	<result name="success" type="stream">
+		<param name="contentType">txt</param>
+		<param name="inputName">inputStream</param>
+		<param name="bufferSize">2048</param>
+	</result>
+   </action>
+
+
+	<action name="adminLogin" class="userManageAction" method="adminLogin">
+		<result name="success" type="json">
+			<param name="root">outcome</param>
+		</result>
+		<!-- <result name="error" type="json">
+			<param name="root">outcome</param>
+		</result> -->
+	</action>
+  	<action name="userCount" class="userManageAction" method="userCount">
+		<result name="success" type="json">
+			<param name="root">result</param>
+		</result>
+		<!-- <result name="error" type="json">
+			<param name="root">outcome</param>
+		</result> -->
+	</action>
+  	<action name="exit" class="userManageAction" method="exit">
+		<result name="success" type="redirect">
+			/admin/adminLogin.jsp
+		</result>
+	</action>
+	<action name="certificationList" class="userManageAction" method="certificationList">
+		<result name="success">
+			/admin/certification-list.jsp
+		</result>
+	</action>
+	<action name="genderCount" class="userManageAction" method="genderCount">
+		<result name="success" type="json">
+			<param name="root">genderList</param>
+		</result>
+	</action>
+	<action name="review" class="userManageAction" method="review">
+		<result name="success" type="json">
+			<param name="root">result</param>
+		</result>
+	</action>
+	<action name="userRegionCount" class="userManageAction" method="userRegionCount">
+		<result name="userRegion" type="json">
+			<param name="root">userGegionList</param>
+		</result>
+	</action>
+	
+	<action name="userSearch" class="userManageAction" method="userSearch">
+  	<result name="success">
+  		/admin/member-list.jsp 
+  	</result>
+  </action>
+  
+	
+  </package>
+</struts>

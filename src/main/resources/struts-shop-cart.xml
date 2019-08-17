@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="shopCart" namespace="/shopCart" extends="json-default">
+    
+    	<action name="listShopCarts" class="shopCartAction" method="listShopCarts">
+    		<result name="success" >
+    		/shopcart.jsp
+    		</result>
+    		<result name="error" type="redirect" >
+    		/index.jsp
+    		</result>
+    	</action>
+    	
+    
+    	<action name="updateShopCartCount" class="shopCartAction" method="updateShopCartCount">
+    		<result name="success" type="json">
+    		<param name="root">totalPrice</param>
+    		</result>
+   
+    	</action>
+    	
+    	
+    	<action name="moveToCollection" class="shopCartAction" method="moveToCollection">
+    		<result name="success" type="redirect">
+    	    listShopCarts
+    		</result>
+    	</action>
+    	
+    	<action name="moveProductToCollection" class="shopCartAction" method="moveProductToCollection">
+    		<result name="success" type="json">
+    		   <param name="root">resVo</param>
+    		</result>
+    	</action>
+    	
+    	<action name="toMoveCProduct" class="shopCartAction" method="toMoveCProduct">
+    		<result name="success" type="json">
+    		   <param name="root">responseResult</param>
+    		</result>
+    	</action>
+    	
+    	<action name="deleteShopCart" class="shopCartAction" method="deleteShopCart">
+    		<result name="success" type="redirect">
+    	    listShopCarts
+    		</result>
+    	</action>
+    	
+ 
+    	
+    	<action name="caculateShopCart" class="shopCartAction" method="caculateShopCart">
+    		<result name="success">
+    			/pay.jsp
+    		</result>
+    	</action>
+    
+
+
+
+
+    </package>
+</struts>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="product" namespace="/product" extends="json-default">
+    
+    	<action name="listCategories" class="productAction" method="listCategories">
+    		<result name="success" type="json">
+    			<param name="root">categoryList</param>
+    		</result>
+    		<result name="error" type="json">
+    			<param name="root">outcome</param>
+    		</result>
+    		
+    	</action>
+        <action  name="productSearch" class="productAction" method="productSearch">
+           <result name="success">
+             /search.jsp
+           </result>
+           
+        </action>
+
+
+        <action  name="productInfo" class="productAction" method="productInfo">
+          <!--  <result name="success" type="json">
+				 <param name="root">result</param> 
+			</result> -->
+			 <result name="success">
+				/introduction.jsp
+			</result>
+        </action>
+
+         <action  name="addShopCart" class="productAction" method="addShopCart">
+           <result name="success" type="json">
+				 <param name="root">resVo</param> 
+			</result> 
+        </action>
+        
+         <action  name="shopCartCount" class="productAction" method="shopCartCount">
+           <result name="success" type="json">
+				<param name="root">resVo</param> 
+			</result> 
+        </action>
+        
+        <action  name="productGenre" class="productAction" method="productGenre">
+           <result name="success">
+             /search.jsp
+           </result>
+           
+        </action>
+        <action  name="productSort" class="productAction" method="productSort">
+           <result name="success">
+             /search.jsp
+           </result>
+           
+        </action>
+        <action  name="productRecommend" class="productAction" method="productRecommend">
+           <result name="success" type="json">
+           		<param name="root">productList</param>
+           </result>
+        </action>
+        <action  name="newProductRecommend" class="productAction" method="newProductRecommend">
+           <result name="success" type="json">
+           		<param name="root">productList</param>
+           </result>
+        </action>
+        <action  name="bestSeller" class="productAction" method="bestSeller">
+           <result name="success" type="json">
+           		<param name="root">productVoList</param>
+           </result>
+        </action>
+        
+    </package>
+</struts>
